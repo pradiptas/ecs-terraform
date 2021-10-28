@@ -18,7 +18,7 @@ workflows:
           checkout: true
           context: terraform
           path: ./infra/dev
-          var_file: variables.tf
+          var_file: terraform.tfvars
           persist-workspace: true
           requires:
             - terraform/validate
@@ -30,7 +30,7 @@ workflows:
           attach-workspace: true
           context: terraform
           path: ./infra/dev
-          var_file: variables.tf
+          var_file: terraform.tfvars
           filters:
             branches:
               only: main
