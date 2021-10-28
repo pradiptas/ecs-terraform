@@ -11,7 +11,7 @@ variable "capacity_providers" {
 }
 
 variable "default_capacity_provider_strategy" {
-  description = "Capacity Providers Strategy"
+  description = "Default Capacity Provider"
   type        = list(map(any))
   default     = []
 }
