@@ -1,7 +1,7 @@
 variable "ecs_cluster_name" {
   description = "Name of ECS Cluster"
   type        = string
-  default     = "pradipta-ecs-cluster-terraform-01-dev"
+  default     = "pradipta-ecs-cluster-terraform-01-prod"
 }
 
 variable "capacity_providers" {
