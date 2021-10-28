@@ -12,6 +12,7 @@ workflows:
           checkout: true
           context: terraform
           path: ./infra
+          var_file: dev_variables.tf
           requires:
             - terraform/fmt
       - terraform/plan:
