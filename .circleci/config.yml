@@ -2,23 +2,22 @@ version: '2.1'
 orbs:
   terraform: circleci/terraform@3.0.0
 workflows:
-  deploy_infrastructure:
+  deploy_infrastructure_dev:
     jobs:
       - terraform/fmt:
           checkout: true
           context: terraform
-          path: ./infra
+          path: ./infra/dev
       - terraform/validate:
           checkout: true
           context: terraform
-          path: ./infra
-          var_file: dev_variables.tf
+          path: ./infra/dev
           requires:
             - terraform/fmt
       - terraform/plan:
           checkout: true
           context: terraform
-          path: ./infra
+          path: ./infra/dev
           var_file: dev_variables.tf
           persist-workspace: true
           requires:
@@ -30,7 +29,7 @@ workflows:
       - terraform/apply:
           attach-workspace: true
           context: terraform
-          path: ./infra
+          path: ./infra/dev
           var_file: dev_variables.tf
           filters:
             branches:
