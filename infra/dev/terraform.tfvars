@@ -8,3 +8,4 @@ default_capacity_provider_strategy = [
 cluster_tags = {
     Environment = "Development"
   }
+  
